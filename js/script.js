@@ -27,3 +27,6 @@ var myData = [
 ];
 
 myRegression.train(myData);
+
+var newInput = [10];
+var output = myRegression.run(newInput);
