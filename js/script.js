@@ -26,3 +26,4 @@ var myData = [
     }
 ];
 
+myRegression.train(myData);
