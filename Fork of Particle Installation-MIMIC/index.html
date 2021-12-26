@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script>
+    window.onerror = function(error, url, line) {
+      parent.postMessage(["console", "❌ -- [ERROR] -- ❌ -- ⚠️ " + error], "*")
+    };
+    var cl = console.log;
+    console.log = function () {
+      var msg = [...arguments].join();parent.postMessage(["console", msg], "*");
+    }  </script>
+  <script>
+    window.onerror = function(error, url, line) {
+      parent.postMessage(["console", "❌ -- [ERROR] -- ❌ -- ⚠️ " + error], "*")
+    };
+    var cl = console.log;
+    console.log = function () {
+      var msg = [...arguments].join();
+      parent.postMessage(["console", msg], "*");
+    }
+  </script>
+  
+  <script src = "https://mimicproject.com/libs/learner.v.0.2.js"></script>
+  <script crossorigin src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+  <script crossorigin src = "https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.2"></script>
+  <script crossorigin src = "https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0"></script>
+  <table>
+    <tr>
+      <td>
+          <div id = "sketch-holder" style = "width:400px;height:300px"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <canvas id="video-canvas" width="320" height="240"></canvas> 
+          <video id="video" width="320" height="240" style="display: none"></video>
+      </td>
+      <td>
+          <div id = "dataset" style = "width:400px;height:250px"></div>
+      </td>
+    </tr>
+  </table>
+</head>
+<body>
+
+</body>
+</html>
